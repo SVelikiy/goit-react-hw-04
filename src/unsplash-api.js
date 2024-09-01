@@ -8,4 +8,4 @@ export const searchImg = async (value, page) => {
       `${BASE_URL}/search/photos?client_id=${id}&page=${page}&query=${value}`
     );
     return response.data;
-}
+} 

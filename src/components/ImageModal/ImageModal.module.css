@@ -1,0 +1,44 @@
+.container {
+  width: 800px;
+  height: 700px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.imageContainer {
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.infoContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  font-size: 20px;
+  font-weight: 700;
+  color: blueviolet;
+}
+
+.link {
+  font-size: 20px;
+  font-weight: 700;
+}
