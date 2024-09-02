@@ -52,12 +52,12 @@ export default function App() {
     evt.preventDefault();
     const form = evt.target;
     const search = form.elements.search.value;
+    if (!search) {
+      return notify();
+    }
     setSearchImage(search);
     setPage(1);
     setImage([]);
-    if (!search) {
-      notify();
-    }
     form.reset();
   };
   const handleLoadMore = () => {
