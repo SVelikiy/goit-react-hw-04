@@ -52,7 +52,7 @@ export default function App() {
     evt.preventDefault();
     const form = evt.target;
     const search = form.elements.search.value;
-    if (!search) {
+    if (search.trim() === '') {
       return notify();
     }
     setSearchImage(search);
