@@ -1,5 +1,4 @@
 import SearchBar from "../SearchBar/SearchBar";
-import toast from "react-hot-toast";
 import { searchImg } from "../../unsplash-api";
 import { useEffect, useState } from "react";
 import ImageGallery from "../ImageGallery/ImageGallery";
@@ -44,21 +43,10 @@ export default function App() {
     getImages();
   }, [page, searchImage]);
 
-  const notify = () => {
-    toast("Please enter text to search images");
-  };
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    const form = evt.target;
-    const search = form.elements.search.value;
-    if (search.trim() === '') {
-      return notify();
-    }
-    setSearchImage(search);
+  const onSearch = (value) => {
+    setSearchImage(value);
     setPage(1);
     setImage([]);
-    form.reset();
   };
   const handleLoadMore = () => {
     setPage(page + 1);
@@ -75,7 +63,7 @@ export default function App() {
 
   return (
     <div>
-      <SearchBar onSubmit={handleSubmit} />
+      <SearchBar onSubmit={onSearch} />
       {image.length !== 0 && (
         <ImageGallery image={image} onImgClick={openModal} />
       )}
